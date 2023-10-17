@@ -1,10 +1,16 @@
 #include <stdio.h>
 
+/*
+A[3][3] მასივი, ინდექსები გადავაანგარიშოთ, 
+რომ გადავწეროთ B[9]-ში და ისე დავასორტიროთ და B[9] დავბეჭდოთ B[3][3]-ის სახით
+*/
+
 int main() {
 
     int A[3][3];
     int arraySize = 9;
     int B[9] = {};
+    int C[3][3] = {};
     int temp;
 
     for (int i = 0; i < 3; i++) {
@@ -23,7 +29,13 @@ int main() {
                 B[j + 1] = temp;
             }
         }
-        printf("%d ", B[i]);
+    }
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            C[i][j] = B[i * 3 + j];
+            printf("%d ", C[i][j]);
+        }
     }
 
     return 0;
